@@ -66,32 +66,52 @@
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       
+      <form  class="login" action="inicio.html" method="post">
         <h2>Por favor regístrese</h1>
           <div>
-            <label>Nombre de usuario</label>
-            <input type="text" name="username" required />
+            <label>Nombre de usuario:</label>
+            <input type="text" name="username" id="username" required />
           </div>
           <div>
-            <label>Correo electrónico</label>
-            <input type="email" name="email" required />
+            <label>Correo electrónico:</label>
+            <input type="email" name="email" id="email" required />
           </div>
           <div>
-            <label>Contraseña</label>
-            <input type="password" name="password" required />
+            <label>Contraseña:</label>
+            <input type="password" name="password" id="password" required />
           </div>
 
           <input type="checkbox" >
-          <label for="2">Recordarme</label><br>
+          <label >Recordarme</label><br>
           
-          <button type="submit" name="register" onclick="window.location.href = 'inicio.html'" required
-            ><strong>Registrar</strong></button>
+          <button type="submit" name="register" onclick="click_al_register()" >
+            <strong>Registrar</strong>
+          </button>
       
-      
+      </form>
     </div>
   </div>
   <script src="inicio.html"></script>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  <script>
+  function click_al_register(){
+    //window.location.href = 'inicio.html';
+    
+      var username = document.getElementById("username").value
+      var email = document.getElementById("email").value
+      var password = document.getElementById("password").value
+      
+      if (username != "" && email != "" && password != ""){
+       
+        window.location.href = 'inicio.html';
+        return false
+      }
+
+  }
+
+
+  </script>
 </body>
 
 </html>
