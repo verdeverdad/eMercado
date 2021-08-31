@@ -27,17 +27,23 @@ var getJSONData = function (url) { // esperamos la respuesta
 }
 
 var productosArray = [];
+var minPrecio;
+var maxPrecio;
 
 function mostrarLista(array) {
   let contenido = "";
   for (let i = 0; i < array.length; i++) {
     let producto = array[i]
-    
+
+   if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(producto.cost) <= minPrecio)) &&
+      ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(producto.cost) >= maxPrecio))){
+        
+      }
     contenido += "Nombre: " + producto.name + "<br>";
-    contenido += "Descripción: " + producto.description + "<br>" ;
+    contenido += "Descripción: " + producto.description + "<br>";
     contenido += "Precio: " + producto.cost + "<br>"
     contenido += "<br><br><hr>"
-    
+
   }
   document.getElementById("Productos").innerHTML = contenido;
 }

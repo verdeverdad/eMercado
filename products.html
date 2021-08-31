@@ -14,8 +14,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    body { background-image: linear-gradient(to right, rgb(132, 241, 255) , rgb(206, 255, 142));
-      
+    body {
+      background-image: linear-gradient(to right, rgb(132, 241, 255), rgb(206, 255, 142));
+
       color: rgb(16, 146, 146);
       text-shadow: 1px 1px rgb(255, 125, 19);
 
@@ -36,7 +37,7 @@
   </style>
 </head>
 
-<body>
+<body> <!-- barra de inicio arriba del todo-->
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
@@ -46,19 +47,44 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <a id="usuario" class="py-2 d-none d-md-inline-block" href="inicio.html"></a>
       <button id="salir" class="btn btn-outline-light"><strong>Salir</strong></button>
-
+      <input type="search" class="bg-light navbar-dark btn-outline-light" placeholder=" buscar"/>
     </div>
-  </nav>
+  </nav> 
+
+<!-- orden alfabetico -->
+  <div class="container">
+    <div class="row">
+        <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                <label class="btn btn-light active" id="sortAsc" >
+                    <input type="radio" name="options" autocomplete="off" checked>A-Z
+                </label>
+                <label class="btn btn-light" id="sortDesc" >
+                    <input type="radio" name="options" autocomplete="off">Z-A
+                </label>
+                <label class="btn btn-light" id="sortByCount" >
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- filtrar por precios-->
   <div class="container p-5" class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+    <div id="filtrosPrecios" style="text-align: right;">
+      <label>Precios</label>    <input tipo="number" placeholder="min" id="minPrecio">
+      <input tipo="number" placeholder="max" id="maxPrecio">
+      <button class="btn btn-outline-dark" id="filtrar">Filtrar</button><button class="btn btn-outline-dark" id="borrar">Borrar</button> 
+    </div>
+    
     <div class="container">
       <h2>P r o d u c
         t o s</h2>
       <div id="Productos" class="container p-5">
       </div>
-    </div>
+    </div> 
   </div>
-  </div>
-  </div>
+  
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
